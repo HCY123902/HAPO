@@ -1,0 +1,25 @@
+accelerate launch --config_file accelerate_configs/deepspeed_zero3.yaml \
+    ppo_train.py \
+    --dataset_name math \
+    --dataset_train_split train \
+    --dataset_test_split valid \
+    --output_dir outputs/ppo \
+    --learning_rate 3e-6 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 2 \
+    --total_episodes 10000 \
+    --model_name_or_path deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B \
+    --sft_model_path deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B \
+    --reward_model_path deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B \
+    --local_rollout_forward_batch_size 1 \
+    --response_length 32768 \
+    --missing_eos_penalty 0.0 \
+    --stop_token eos \
+    --eval_strategy epoch \
+    --save_strategy epoch \
+    --save_total_limit 10 \
+    --save_only_model \
+    --run_name ppo \
+    --eval_on_start \
+    --num_ppo_epochs 4 \
+    --w_lr 1.0

@@ -1,0 +1,23 @@
+accelerate launch --config_file accelerate_configs/deepspeed.yaml \
+    train_grpo.py \
+    --train_dataset "datasets/train_samples_dsr_2000.json" \
+    --val_dataset "math/datasets/valid_samples_dsr_500.json" \
+    --model_name "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B" \
+    --wandb_run_name "grpo" \
+    --deepspeed_path "math/accelerate_configs/deepspeed.json" \
+    --output_dir "outputs/grpo" \
+    --restore False \
+    --num_epochs 5 \
+    --gradient_accumulation_steps 4 \
+    --batch_size 1 \
+    --max_prompt_length 512 \
+    --max_completion_length 32768 \
+    --num_workers 2 \
+    --gpus_per_worker 1 \
+    --cpus_per_worker 31 \
+    --lora_r 0 \
+    --lora_alpha 0 \
+    --lora_dropout 0 \
+    --w_lr 1.0 \
+    --type_lr cosine \
+    --num_generations 2
