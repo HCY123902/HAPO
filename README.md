@@ -51,4 +51,4 @@ We use [`lighteval`](https://github.com/huggingface/lighteval) to evaluate the t
 
 ## Model Checkpoints
 
-The trained model checkpoints will be released soon.
+The trained model checkpoints are provided for [DeepSeek-R1-1.5B](https://huggingface.co/HCY123902/hapo_ds_1b), [DeepScaleR-1.5B](https://huggingface.co/HCY123902/hapo_dsr_1b), and [Qwen-2.5-1.5B-Inst](https://huggingface.co/HCY123902/hapo_qwen_1b).
