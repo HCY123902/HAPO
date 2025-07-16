@@ -33,11 +33,11 @@ To train with GRPO, run `bash train_grpo.sh`. To train with PPO, run `bash train
 
 ### Additional Training Arguments
 
-`w_lr`: Weight of the length reward. Defaults to `1.0`. A higher value means more emphasis of the length reard. The weight needs to be in the range [0, 1], to ensure that any correct response has a higher combined reward than any incorrect response.
-`type_lr`: The type of length reward function. Defaults to `"cosine"`. The other option `"linear"` produces a picece wise linear function for length reward computation.
-`mode`: The update mode, also denoted as the aggregate function in the paper. Defaults to `"min"`. `"mean"` makes `h_i` keep track of the mean length of historical correct responses, instead of the minimum length of them.
-`rep_ngram_size`: Size of ngram for the repetition reward. Defaults to `3`. A higher value means only penalizing repeated ngrams that are larger than or equal to the specified size.
-`rep_penalty`: Maximum penalty for the repetition reward. Defaults to `0.0`, meaning no penalty. The penalty needs to be a non positive number. A smaller value means more emphasis on the reptition reward.
+* `w_lr`: Weight of the length reward. Defaults to `1.0`. A higher value means more emphasis of the length reard. The weight needs to be in the range [0, 1], to ensure that any correct response has a higher combined reward than any incorrect response.
+* `type_lr`: The type of length reward function. Defaults to `"cosine"`. The other option `"linear"` produces a picece wise linear function for length reward computation.
+* `mode`: The update mode, also denoted as the aggregate function in the paper. Defaults to `"min"`. `"mean"` makes `h_i` keep track of the mean length of historical correct responses, instead of the minimum length of them.
+* `rep_ngram_size`: Size of ngram for the repetition reward. Defaults to `3`. A higher value means only penalizing repeated ngrams that are larger than or equal to the specified size.
+* `rep_penalty`: Maximum penalty for the repetition reward. Defaults to `0.0`, meaning no penalty. The penalty needs to be a non positive number. A smaller value means more emphasis on the reptition reward.
 
 ## Evaluation
 
