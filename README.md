@@ -6,7 +6,7 @@ This repostiory contains the code and dataset for our paper: HAPO: Training Lang
 
 1. Run `nvcc -V` and make sure your system CUDA version is 12.1 or newer.
 
-1. Clone this repository, and then create a new conda environment with the required packages
+2. Clone this repository, and then create a new conda environment with the required packages
 
 ```
 conda create -n hapo python=3.11
@@ -15,7 +15,7 @@ cd HAPO
 pip install -r requirements.txt
 ```
 
-1. Sign in to HuggingFace and Weight and Biases with your respective tokens
+3. Sign in to HuggingFace and Weight and Biases with your respective tokens
 ```
 huggingface-cli login
 wandb init
